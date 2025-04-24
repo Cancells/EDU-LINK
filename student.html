@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EduLink - Student Dashboard</title>
+  <link rel="stylesheet" href="student.css" />
+  <!-- Google Fonts (Inter font, same as landing page) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+        <a href="index.html" class="navbar-brand">
+          <i data-lucide="book-open"></i>
+          <span>Edu-Link</span>
+        </a>
+      <ul class="navbar-nav">
+        <li><a class="nav-link" href="#">Courses</a></li>
+        <li><a class="nav-link" href="#">Teachers</a></li>
+        <li><a class="nav-link" href="#">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme="system">
+          <i data-lucide="moon" class="dark-icon"></i>
+          <i data-lucide="sun" class="light-icon"></i>
+          <i data-lucide="laptop" class="system-icon"></i>
+        </button>
+        <form class="search-form">
+          <input type="search" placeholder="Search" />
+          <button type="submit">Search</button>
+        </form>
+        <a class="btn-logout" href="../log in/index.html">Log Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="student-info">
+      <img id="student-photo" src="./imgs/default.jpg" alt="Student Photo">
+      <div class="student-details">
+        <h1 id="student-name">Welcome, Student</h1>
+        <p>Your educational journey begins here</p>
+      </div>
+    </div>
+    
+    <form class="grade-form">
+      <label for="year">Please, Select your grade</label>
+      <select id="year">
+        <option selected disabled>Choose...</option>
+        <option>prep 1st</option>
+        <option>perp 2nd</option>
+        <option>prep 3rd</option>
+        <option>Secondary 1st</option>
+        <option>Secondary 2nd</option>
+        <option>Secondary 3rd</option>
+      </select>
+    </form>
+
+    <h2 class="section-title">Featured Courses</h2>
+    <div class="courses" id="courses-container">
+      <!-- Course cards will be dynamically added here -->
+    </div>
+  </div>
+
+  <!-- Cartoon Character -->
+  <div class="cartoon-helper"></div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Edu-Link. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="TOS.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="student.js"></script>
+</body>
+</html>

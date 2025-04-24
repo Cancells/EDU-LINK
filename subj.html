@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subject Details</title>
+    <link rel="stylesheet" href="subj.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-container">
+          <a href="index.html" class="logo">
+            <i data-lucide="book-open"></i>
+            <span>Edu-Link</span>
+          </a>
+
+          <div class="nav-links">
+            <a href="courses.html">Courses</a>
+            <a href="landing.html">Home</a>
+            <a href="about.html">About</a>
+          </div>
+
+            <a href="login.html" class="logout-btn">Log Out</a>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container fade-in">
+        <h1>Subject: Physics</h1>
+        <p>This subject covers topics related to motion, energy, electricity, and more, helping students build a strong
+            foundation for future scientific studies.</p>
+
+        <h2>Instructors</h2>
+        <div class="teacher-list">
+            <div class="teacher-card">
+                <img src="../imgs/teacher1.jpg" alt="Teacher Photo">
+                <h3>Mr. Khaled Ali</h3>
+                <p>Experienced physics teacher with over 10 years in the field. Known for simplifying complex concepts.
+                </p>
+                <p>Total Enrolled Students: <span>42</span></p>
+                <a href="teacher_profile.html?id=1" class="btn-primary">View Profile</a>
+            </div>
+            <div class="teacher-card">
+                <img src="../imgs/teacher2.jpg" alt="Teacher Photo">
+                <h3>Ms. Salma Hassan</h3>
+                <p>Passionate about science education. Focuses on real-world examples and student engagement.</p>
+                <p>Total Enrolled Students: <span>38</span></p>
+                <a href="teacher_profile.html?id=2" class="btn-primary">View Profile</a>
+            </div>
+            <div class="teacher-card">
+                <img src="../imgs/teacher3.jpg" alt="Teacher Photo">
+                <h3>Mr. Ahmed Tarek</h3>
+                <p>Energetic and motivational instructor with a knack for interactive learning sessions.</p>
+                <p>Total Enrolled Students: <span>47</span></p>
+                <a href="teacher_profile.html?id=3" class="btn-primary">View Profile</a>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>FAQ</h2>
+            <div class="faq-item">
+                <h4>Is there a final exam?</h4>
+                <p>Yes, students will take a comprehensive final exam at the end of the course.</p>
+            </div>
+            <div class="faq-item">
+                <h4>How many sessions per week?</h4>
+                <p>There are typically 2 sessions per week, each lasting about 1 hour.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Are there practical experiments?</h4>
+                <p>Yes, virtual lab experiments are included for a hands-on learning experience.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        lucide.createIcons();
+      </script>
+</body>
+</html>

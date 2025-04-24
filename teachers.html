@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edu-Link - Student Dashboard</title>
+  
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="teacher.css">
+  
+  <!-- Google Fonts (if you want to use Inter font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons (Using Lucide) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navigation">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i data-lucide="book-open"></i>
+        <span>Edu-Link</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="courses.html">Courses</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="about.html">About</a>
+      </div>
+      
+      <div class="nav-actions">
+        <button class="theme-toggle" data-theme="system">
+          <i data-lucide="moon" class="dark-icon"></i>
+          <i data-lucide="sun" class="light-icon"></i>
+          <i data-lucide="laptop" class="system-icon"></i>
+        </button>
+        <a href="login.html" class="login-btn">Log in</a>
+        <a href="signup.html" class="signup-btn">Sign up</a>
+      </div>
+      
+      <button class="navbar-toggler">
+        <span class="toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container main-content">
+    <h1 class="page-title">Student Dashboard</h1>
+    
+    <form class="filter-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="year">Select Year</label>
+          <select class="form-control" id="year">
+            <option selected disabled>Choose...</option>
+            <option>First Year</option>
+            <option>Second Year</option>
+            <option>Third Year</option>
+            <option>Fourth Year</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="teacher">Select Teacher</label>
+          <select class="form-control" id="teacher">
+            <option selected disabled>Choose...</option>
+            <option>Mr. Ahmed</option>
+            <option>Dr. Fatima</option>
+            <option>Mr. Mohamed</option>
+          </select>
+        </div>
+      </div>
+    </form>
+
+    <!-- Featured Courses -->
+    <section class="courses-section">
+      <h2 class="section-title">Featured Courses</h2>
+      <div class="courses-grid">
+        <!-- Arabic -->
+        <div class="course-card">
+          <img src="./imgs/ar.jpg" class="card-image" alt="Arabic Course"/>
+          <div class="card-content">
+            <h3 class="card-title">Arabic Language Course</h3>
+            <p class="card-info">Instructor: Mr. Ahmed</p>
+            <p class="card-info">Duration: 12 hours</p>
+            <a href="#" class="btn primary-btn">View</a>
+          </div>
+        </div>
+
+        <!-- Math -->
+        <div class="course-card">
+          <img src="./imgs/math.jpg" class="card-image" alt="Math Course"/>
+          <div class="card-content">
+            <h3 class="card-title">Mathematics Course</h3>
+            <p class="card-info">Instructor: Dr. Fatima</p>
+            <p class="card-info">Duration: 15 hours</p>
+            <a href="#" class="btn primary-btn">View</a>
+          </div>
+        </div>
+
+        <!-- Science -->
+        <div class="course-card">
+          <img src="./imgs/sciences.jpg" class="card-image" alt="Science Course"/>
+          <div class="card-content">
+            <h3 class="card-title">Science Course</h3>
+            <p class="card-info">Instructor: Mr. Mohamed</p>
+            <p class="card-info">Duration: 10 hours</p>
+            <a href="#" class="btn primary-btn">View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 Edu-Link. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+<script>lucide.createIcons();</script>
+  <!-- Initialize Lucide icons and theme switcher -->
+   <script src="teachers.js"></script>
+</body>
+</html>

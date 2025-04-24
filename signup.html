@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an account - Edu-Link</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="book-open"></i>
+                <span>Edu-Link</span>
+            </a>
+
+            <div class="nav-links">
+                <a href="/courses">Courses</a>
+                <a href="landing.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" data-theme="system">
+                    <i data-lucide="moon" class="dark-icon"></i>
+                    <i data-lucide="sun" class="light-icon"></i>
+                    <i data-lucide="laptop" class="system-icon"></i>
+                </button>
+                <a href="login.html" class="login-btn">Log in</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Signup Form -->
+    <div class="signup-container">
+        <div class="signup-form">
+            <div class="form-title">
+                <h1>Create an account</h1>
+                <p>Sign up to start using Edu-Link</p>
+            </div>
+
+            <form id="signupForm" >
+                <div class="form-group">
+                    <label class="form-label">I am a:</label>
+                    <div class="role-buttons">
+                        <button type="button" class="role-button" onclick="selectRole('student')" data-role="student">
+                            <i data-lucide="user"></i>
+                            <span>Student</span>
+                        </button>
+                        <button type="button" class="role-button" onclick="selectRole('teacher')" data-role="teacher">
+                            <i data-lucide="graduation-cap"></i>
+                            <span>Teacher</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    <label for="fullName" class="form-label">Full Name</label>
+                    <input type="text" id="fullName" class="form-input" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group ">
+                    <label for="user" class="form-label">User Name</label>
+                    <input type="text" id="user" class="form-input" placeholder="Enter User Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="m@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="student-grade">Select Grade</label>
+                    <select id="student-grade" class="form-input" required>
+                        <option value="">-- Choose Grade --</option>
+                        <option>Prep 1st</option>
+                        <option>Prep 2nd</option>
+                        <option>Prep 3rd</option>
+                        <option>Secondary 1st</option>
+                        <option>Secondary 2nd</option>
+                        <option>Secondary 3rd</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+
+            <form id="teacher-form">
+                <div class="role-buttons">
+                    <button type="button" class="role-button" onclick="selectRole('student')" data-role="student">
+                        <i data-lucide="user"></i>
+                        <span>Student</span>
+                    </button>
+                    <button type="button" class="role-button" onclick="selectRole('teacher')" data-role="teacher">
+                        <i data-lucide="graduation-cap"></i>
+                        <span>Teacher</span>
+                    </button>
+                </div>
+                <div class="form-group">
+                    <label for="teacher-name">Full Name</label>
+                    <input type="text" id="teacher-name" class="form-input" required />
+                </div>
+                <div class="form-group">
+                    <label for="teacher-username">User Name</label>
+                    <input type="text" id="teacher-username" class="form-input" required />
+                </div>
+                <div class="form-group">
+                    <label for="teacher-email">Email</label>
+                    <input type="email" id="teacher-email" class="form-input" required />
+                </div>
+                <div class="form-group">
+                    <label for="teacher-password">Password</label>
+                    <input type="password" id="teacher-password" class="form-input" required />
+                </div>
+                <button type="button" class="submit-btn" onclick="showTeacherMore()">Next</button>
+            </form>
+
+            <form id="teacher-more">
+                <div class="form-group">
+                    <label for="about-me">About Me</label>
+                    <textarea id="about-me" rows="4" class="form-input" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject" class="form-input" required>
+                        <option value="">-- Choose Subject --</option>
+                        <option>Arabic</option>
+                        <option>English</option>
+                        <option>Social Studies</option>
+                        <option>Science</option>
+                        <option>Math</option>
+                        <option>History</option>
+                        <option>Geography</option>
+                        <option>Chemistry</option>
+                        <option>Biology</option>
+                        <option>Physics</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Create Account</button>
+            </form>
+            <div class="login-link">
+                Already have an account? <a href="login.html">Log in</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Edu-Link. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="/terms">Terms</a>
+                <a href="/privacy">Privacy</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+    <script src="signup.js"></script>
+</body>
+
+</html>

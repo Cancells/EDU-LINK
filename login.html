@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Edu-Link</title>
+    
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="login-styles.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i data-lucide="book-open"></i>
+                <span>Edu-Link</span>
+            </a>
+            
+            <div class="nav-links">
+                <a href="/courses">Courses</a>
+                <a href="landing.html">Home</a>
+                <a href="about.html">About</a>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" data-theme="system">
+                    <i data-lucide="moon" class="dark-icon"></i>
+                    <i data-lucide="sun" class="light-icon"></i>
+                    <i data-lucide="laptop" class="system-icon"></i>
+                </button>
+                <a href="login.html" class="login-btn active">Log in</a>
+                <a href="signup.html" class="signup-btn">Sign up</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <h1>Welcome back</h1>
+                <p>Enter your credentials to access your account</p>
+            </div>
+            
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <div class="input-container">
+                        <i data-lucide="mail" class="input-icon"></i>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="password-header">
+                        <label for="password">Password</label>
+                        <a href="/forgot-password" class="forgot-password">Forgot password?</a>
+                    </div>
+                    <div class="input-container">
+                        <i data-lucide="lock" class="input-icon"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <i data-lucide="eye" class="show-password"></i>
+                            <i data-lucide="eye-off" class="hide-password hidden"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="form-group remember-me">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember" name="remember">
+                        <span class="checkmark"></span>
+                        Remember me for 30 days
+                    </label>
+                </div>
+                
+                <button type="submit" class="login-button">Log in</button>
+                
+                <div class="or-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="social-login">
+                    <button type="button" class="google-btn">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" alt="Google">
+                        Sign in with Google
+                    </button>
+                </div>
+            </form>
+            
+            <div class="signup-prompt">
+                <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Edu-Link. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="TOS.html">Terms</a>
+                <a href="/privacy">Privacy</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide icons and theme switcher -->
+     <script src="login.js"></script>
+</body>
+</html>

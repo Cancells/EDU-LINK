@@ -1,0 +1,569 @@
+/* Variables for Dark Theme */
+:root {
+    --bg-primary: #1a1b1e;
+    --bg-secondary: #242529;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --accent-green: #47d666;
+    --accent-blue: #60a5fa;
+    --accent-purple: #c084fc;
+    --border-color: #374151;
+  }
+  
+  /* Variables for Light Theme */
+  [data-theme="light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --accent-green: #059669;
+    --accent-blue: #2563eb;
+    --accent-purple: #7c3aed;
+    --border-color: #e5e7eb;
+  }
+  
+  /* When system preference is dark and theme is set to system */
+  @media (prefers-color-scheme: dark) {
+    [data-theme="system"] {
+      --bg-primary: #1a1b1e;
+      --bg-secondary: #242529;
+      --text-primary: #ffffff;
+      --text-secondary: #9ca3af;
+      --accent-green: #47d666;
+      --accent-blue: #60a5fa;
+      --accent-purple: #c084fc;
+      --border-color: #374151;
+    }
+  }
+  
+  /* When system preference is light and theme is set to system */
+  @media (prefers-color-scheme: light) {
+    [data-theme="system"] {
+      --bg-primary: #ffffff;
+      --bg-secondary: #f3f4f6;
+      --text-primary: #1f2937;
+      --text-secondary: #4b5563;
+      --accent-green: #059669;
+      --accent-blue: #2563eb;
+      --accent-purple: #7c3aed;
+      --border-color: #e5e7eb;
+    }
+  }
+  
+  /* Reset and Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Navigation */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(var(--bg-primary-rgb, 26, 27, 30), 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+  }
+  
+  /* Theme toggle button */
+  .theme-toggle {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .theme-toggle:hover {
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+  }
+  
+  .theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: transform 0.3s ease;
+  }
+  
+  .theme-toggle .dark-icon,
+  .theme-toggle .light-icon,
+  .theme-toggle .system-icon {
+    display: none;
+  }
+  
+  /* Show appropriate icon based on current theme */
+  .theme-toggle[data-theme="dark"] .dark-icon,
+  [data-theme="dark"] .theme-toggle[data-theme="system"] .dark-icon {
+    display: block;
+  }
+  
+  .theme-toggle[data-theme="light"] .light-icon,
+  [data-theme="light"] .theme-toggle[data-theme="system"] .light-icon {
+    display: block;
+  }
+  
+  .theme-toggle[data-theme="system"] .system-icon {
+    display: block;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+  
+  .logo svg {
+    width: 32px;
+    height: 32px;
+    color: var(--accent-green);
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: var(--text-secondary);
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--text-primary);
+  }
+  
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .login-btn {
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    transition: opacity 0.3s ease;
+  }
+  
+  .login-btn:hover, .login-btn.active {
+    opacity: 0.8;
+    background-color: var(--bg-secondary);
+    border-radius: 0.5rem;
+  }
+  
+  .signup-btn {
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .signup-btn:hover {
+    background-color: #3cc759;
+    transform: translateY(-1px);
+  }
+  
+  /* Login Section */
+  .login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 2rem 2rem; /* Extra padding top to account for fixed navbar */
+  }
+  
+  .login-card {
+    background-color: var(--bg-secondary);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    padding: 2.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .login-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .login-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(to right, var(--text-primary), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .login-header p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .form-group label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+  
+  .forgot-password {
+    font-size: 0.75rem;
+    color: var(--accent-blue);
+    transition: opacity 0.3s ease;
+  }
+  
+  .forgot-password:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  
+  .input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 1rem;
+    color: var(--text-secondary);
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 0.75rem 1rem 0.75rem 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 2px rgba(71, 214, 102, 0.2);
+  }
+  
+  .input-container input::placeholder {
+    color: var(--text-secondary);
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+  }
+  
+  .toggle-password:hover {
+    color: var(--text-primary);
+  }
+  
+  .toggle-password svg {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .remember-me {
+    margin-top: -0.5rem;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  .checkmark {
+    position: relative;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+  }
+  
+  .checkbox-container:hover input ~ .checkmark {
+    border-color: var(--accent-green);
+  }
+  
+  .checkbox-container input:checked ~ .checkmark {
+    background-color: var(--accent-green);
+    border-color: var(--accent-green);
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox-container .checkmark:after {
+    left: 5px;
+    top: 1px;
+    width: 3px;
+    height: 7px;
+    border: solid var(--bg-primary);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  .login-button {
+    background-color: var(--accent-green);
+    color: var(--bg-primary);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .login-button:hover {
+    background-color: #3cc759;
+    transform: translateY(-1px);
+  }
+  
+  .or-divider {
+    position: relative;
+    text-align: center;
+    margin: 0.5rem 0;
+  }
+  
+  .or-divider:before,
+  .or-divider:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 45%;
+    height: 1px;
+    background-color: var(--border-color);
+  }
+  
+  .or-divider:before {
+    left: 0;
+  }
+  
+  .or-divider:after {
+    right: 0;
+  }
+  
+  .or-divider span {
+    display: inline-block;
+    padding: 0 10px;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .google-btn:hover {
+    background-color: var(--bg-secondary);
+    transform: translateY(-1px);
+  }
+  
+  .google-btn img {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .signup-prompt {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+  
+  .signup-prompt a {
+    color: var(--accent-green);
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+  }
+  
+  .signup-prompt a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+    padding: 2rem;
+    margin-top: auto;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+  
+  .footer-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-container {
+      padding: 1rem;
+    }
+    
+    .nav-links {
+      display: none;
+    }
+    
+    .login-card {
+      padding: 1.5rem;
+    }
+    
+    .login-header h1 {
+      font-size: 1.5rem;
+    }
+    
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+  }
